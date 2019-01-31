@@ -1,8 +1,8 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Add New Album to Inventory</h3>
+    <div (click)="showAddAlbum()"><button><h3 class="panel-title">Add New Album to Inventory</h3></button></div>
   </div>
-  <div class="panel-body">
+  <div *ngIf='addAlbumsClicked' class="panel-body">
     <div>
       <div>
         <label>Album Title:</label>
@@ -26,6 +26,35 @@
   </div>
 </div>
 
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <div (click)="showAddVideo()"><button><h3 class="panel-title">Add New Video to Inventory</h3></button></div>
+    </div>
+    <div *ngIf='addVideosClicked' class="panel-body">
+      <div>
+        <div>
+          <label>Video Title:</label>
+          <br>
+          <input #newVideoTitle>
+        </div>
+  
+        <div>
+          <label>Video Director:</label>
+          <br>
+          <input #newDirector>
+        </div>
+  
+        <div>
+          <label>Video Link:</label>
+          <br>
+          <textarea #newLink></textarea>
+        </div>
+        <button (click)="submitVideoForm(newVideoTitle.value, newDirector.value, newLink.value); newVideoTitle.value=''; newDirector.value=''; newLink.value=''">Add Video </button>
+      </div>
+    </div>
+  </div>
+
 <div>
   <app-marketplace></app-marketplace>
+  
 </div>

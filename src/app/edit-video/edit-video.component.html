@@ -1,0 +1,19 @@
+
+<button (click)="editVideoClicked()"><h4>Edit Video</h4></button>
+<br>
+<div *ngIf='editVideo'>
+<label>New Video Title:</label>
+<input [(ngModel)]="selectedVideo.title">
+<br>
+
+<label>New Video Director:</label>
+<input [(ngModel)]="selectedVideo.director">
+<br>
+
+<label>New Video Link:</label>
+<input [(ngModel)]="selectedVideo.link">
+
+<button (click)="beginUpdatingVideo(selectedVideo)">Update</button>
+</div>
+<hr>
+<button (click)="beginDeletingVideo(selectedVideo)"><h4>Delete Video</h4></button>

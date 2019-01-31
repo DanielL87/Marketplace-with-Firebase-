@@ -1,5 +1,7 @@
-<h4>Edit Album</h4>
 
+<button (click)="editAlbumClicked()"><h4>Edit Album</h4></button>
+<br>
+<div *ngIf='editAlbum'>
 <label>New Album Title:</label>
 <input [(ngModel)]="selectedAlbum.title">
 <br>
@@ -12,5 +14,6 @@
 <input [(ngModel)]="selectedAlbum.description">
 
 <button (click)="beginUpdatingAlbum(selectedAlbum)">Update</button>
+</div>
 <hr>
-<button (click)="beginDeletingAlbum(selectedAlbum)">Delete</button>
+<button (click)="beginDeletingAlbum(selectedAlbum)"><h4>Delete Album</h4></button>
